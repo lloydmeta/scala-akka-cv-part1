@@ -29,7 +29,7 @@ object Webcam {
     dimensions: Dimensions,
     bitsPerPixel: Int = CV_8U,
     imageMode: ImageMode = ImageMode.COLOR
-  )(implicit system: ActorSystem): Source[Frame, Unit] = {
+  )(implicit system: ActorSystem) = {
     val props = Props(
       new WebcamFramePublisher(
         deviceId = deviceId,
